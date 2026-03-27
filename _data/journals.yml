@@ -1,15 +1,17 @@
-- title: "Journal of History"
+- title_zh: "连环画研究"
+  title_en: "Lianhuanhua Research"
   issues:
-    - name: "Volume 1, Issue 1 (Spring 2023)"
+    - name_zh: "1955年 第1期"
+      name_en: "1955, Issue 1"
       articles:
-        - title: "The Origins of the Printing Press"
-          author: "Jane Doe"
-        - title: "Industrial Revolution Impacts"
-          author: "John Smith"
-    - name: "Volume 1, Issue 2 (Fall 2023)"
-      articles:
-        - title: "Trade Routes in the 15th Century"
-          author: "Alice Johnson"
+        - title_zh: "论连环画的教育意义"
+          title_en: "On the Educational Significance of Lianhuanhua"
+          author_zh: "鲁迅"
+          author_en: "Lu Xun"
+        - title_zh: "新中国漫画的发展"
+          title_en: "The Development of Comics in New China"
+          author_zh: "张乐平"
+          author_en: "Zhang Leping"
 
 - title: "Journal of Science"
   issues:
