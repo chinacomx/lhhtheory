@@ -1,13 +1,33 @@
 document.addEventListener('DOMContentLoaded', function() {
     
+    // --- Utility: Debounce (prevents lag while typing) ---
     function debounce(func, wait) {
         let timeout;
         return function(...args) {
             clearTimeout(timeout);
             timeout = setTimeout(() => func.apply(this, args), wait);
         };
+    } // <- This is the bracket that was missing!
+
+    // --- 1. Language Toggle Logic ---
+    const langToggle = document.getElementById('langToggle');
+    const archiveContainer = document.getElementById('archive-container');
+
+    if (langToggle && archiveContainer) {
+        langToggle.addEventListener('click', function() {
+            // Toggle the 'hide-en' class on the whole archive
+            archiveContainer.classList.toggle('hide-en');
+            
+            // Update the button text
+            if (archiveContainer.classList.contains('hide-en')) {
+                this.textContent = 'Show English';
+            } else {
+                this.textContent = 'Hide English';
+            }
+        });
     }
 
+    // --- 2. Collapsible Headers Logic ---
     const collapsibles = document.querySelectorAll('.collapsible');
 
     collapsibles.forEach(button => {
@@ -31,6 +51,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
+    // --- 3. Search Bar Logic ---
     const searchBar = document.getElementById('searchBar');
 
     const handleSearch = debounce(function(e) {
@@ -49,9 +70,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 return; 
             }
 
-           items.forEach(item => {
-                // .replace(/\s+/g, ' ') normalizes the invisible line-breaks in the HTML 
-                // so the search engine reads it cleanly as one block of text
+            items.forEach(item => {
+                // The .replace(/\s+/g, ' ') handles the spacing between the Chinese and English spans
                 const text = item.textContent.toLowerCase().replace(/\s+/g, ' ');
                 if (text.includes(searchTerm)) {
                     item.classList.remove('hidden');
@@ -71,7 +91,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }, 200);
 
-    if(searchBar) {
+    if (searchBar) {
         searchBar.addEventListener('input', handleSearch);
     }
 });
