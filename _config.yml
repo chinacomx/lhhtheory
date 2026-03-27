@@ -1,0 +1,5 @@
+title: "lhhtheory"
+description: "Subpage for the ChinaComx lianhuanhua theory reference space."
+remote_theme: "mmistakes/minimal-mistakes"
+plugins:
+  - jekyll-include-cache
