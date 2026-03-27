@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
             clearTimeout(timeout);
             timeout = setTimeout(() => func.apply(this, args), wait);
         };
-    } // <- This is the bracket that was missing!
+    }
 
     // --- 1. Language Toggle Logic ---
     const langToggle = document.getElementById('langToggle');
@@ -94,4 +94,62 @@ document.addEventListener('DOMContentLoaded', function() {
     if (searchBar) {
         searchBar.addEventListener('input', handleSearch);
     }
+
+    // --- 4. Accessibility Widget (Dark Mode & Font Size) ---
+    const btnIncrease = document.getElementById('btn-text-increase');
+    const btnDecrease = document.getElementById('btn-text-decrease');
+    const btnTheme = document.getElementById('btn-theme-toggle');
+    const archiveWrapper = document.querySelector('.archive-wrapper');
+
+    // 4a. Font Size Logic
+    let currentZoom = localStorage.getItem('site-zoom') ? parseInt(localStorage.getItem('site-zoom')) : 100;
+    
+    function applyZoom() {
+        if (archiveWrapper) {
+            archiveWrapper.style.fontSize = currentZoom + '%';
+        }
+        localStorage.setItem('site-zoom', currentZoom);
+    }
+
+    if (btnIncrease && btnDecrease) {
+        applyZoom(); // Apply on load
+        
+        btnIncrease.addEventListener('click', () => {
+            if (currentZoom < 150) { // Max zoom 150%
+                currentZoom += 10;
+                applyZoom();
+            }
+        });
+        
+        btnDecrease.addEventListener('click', () => {
+            if (currentZoom > 80) { // Min zoom 80%
+                currentZoom -= 10;
+                applyZoom();
+            }
+        });
+    }
+
+    // 4b. Dark Mode Logic
+    let isDarkMode = localStorage.getItem('dark-mode') === 'true';
+
+    function applyTheme() {
+        if (isDarkMode) {
+            document.body.classList.add('dark-mode');
+            if (btnTheme) btnTheme.textContent = '☀'; // Sun icon for dark mode
+        } else {
+            document.body.classList.remove('dark-mode');
+            if (btnTheme) btnTheme.textContent = '☽'; // Moon icon for light mode
+        }
+    }
+
+    if (btnTheme) {
+        applyTheme(); // Apply on load
+        
+        btnTheme.addEventListener('click', () => {
+            isDarkMode = !isDarkMode;
+            localStorage.setItem('dark-mode', isDarkMode);
+            applyTheme();
+        });
+    }
+
 });
