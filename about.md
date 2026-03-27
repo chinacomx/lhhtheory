@@ -152,11 +152,15 @@ body.dark-mode .floating-controls button:hover {
   </div>
 
   <div class="about-content">
-    <h2>About</h2>
-    <p>This reference space is dedicated to the study of Lianhuanhua theory. It aggregates tables of contents from key journals published between 1955 and 2012, providing a bilingual searchable index for researchers and enthusiasts.</p>
+    <p>This subproject was developed as part of the ERC-funded project <a href="LINK_HERE" target="_blank">ChinaComx: Comics Culture in the PRC</a>. The digital tables of contents for the three most prominent <em>lianhuanhua</em> theory journals were compiled by the ChinaComx team using materials kindly provided by the <a href="LINK_HERE" target="_blank">CATS Library</a> and the <a href="LINK_HERE" target="_blank">Berlin State Library</a> via <a href="LINK_HERE" target="_blank">CrossAsia</a>, alongside our own project source collection.</p>
     
-    <p><em>[Add your project history, methodology, acknowledgments, or contact details here...]</em></p>
+    <p>We extend our gratitude to our research assistants for their help in digitizing the journals. Additionally, the tables of contents for <em>Lianhuanhua Research</em> [INSERT DATES/ISSUES HERE] were adapted from an overview article by <a href="LINK_HERE" target="_blank">Takeda Masaya</a>.</p>
+    
+    <p>This website was designed by <a href="LINK_HERE" target="_blank">Damian Mandzunowski</a>, with coding assistance from Gemini 3.1 Pro, and was directly inspired by Konrad Lawson’s <a href="LINK_HERE" target="_blank">Tokyo Gazette Archive</a>.</p>
+
+    <p><em>This platform is strictly for academic and educational purposes. If you have any questions, suggestions, or information regarding the few missing journal issues, please <a href="LINK_HERE">contact us here</a>.</em></p>
   </div>
+
   
   <div class="floating-controls">
     <button id="btn-text-decrease" aria-label="Decrease text size">A−</button>
