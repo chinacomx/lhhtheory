@@ -17,7 +17,8 @@ permalink: /about/
 
 <div class="archive-wrapper">
   <div class="custom-header">
-    <h1 class="site-title-custom">About the Archive</h1>
+    <h1 class="site-title-custom">ChinaComx: Lianhuanhua Theory</h1>
+    <h2 class="site-title-custom">About</h2>
     <div class="custom-nav">
       <a href="{{ '/' | relative_url }}">Browse</a>
       <span class="separator">|</span>
