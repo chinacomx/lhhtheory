@@ -141,7 +141,6 @@ body.dark-mode .floating-controls button:hover {
   
   <div class="custom-header">
     <h1 class="site-title-custom">ChinaComx: Lianhuanhua Theory</h1>
-    </div>
     
     <div class="custom-nav">
       <a href="{{ '/' | relative_url }}">Browse</a>
@@ -153,7 +152,7 @@ body.dark-mode .floating-controls button:hover {
   </div>
 
   <div class="about-content">
-    <h2 class="site-title-custom">About</h2>
+    <h2>About</h2>
     <p>This reference space is dedicated to the study of Lianhuanhua theory. It aggregates tables of contents from key journals published between 1955 and 2012, providing a bilingual searchable index for researchers and enthusiasts.</p>
     
     <p><em>[Add your project history, methodology, acknowledgments, or contact details here...]</em></p>
