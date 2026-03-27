@@ -234,7 +234,6 @@ body.dark-mode .custom-header,
 body.dark-mode .site-subtitle,
 body.dark-mode .about-content {
     color: #e0e0e0;
-    
 }
 body.dark-mode .site-title-custom,
 body.dark-mode .collapsible .lang-zh,
@@ -269,7 +268,7 @@ body.dark-mode .floating-controls button {
 body.dark-mode .floating-controls button:hover {
     color: #66b2ff;
 }
-.body.dark-mode .journal-item { color: #ccc; }
+body.dark-mode .journal-item { color: #ccc; }
     
 </style>
 
@@ -277,7 +276,7 @@ body.dark-mode .floating-controls button:hover {
   
   <div class="custom-header">
     <h1 class="site-title-custom">ChinaComx: Lianhuanhua Theory</h1>
-<div class="site-subtitle">
+    <div class="site-subtitle">
       <span class="journal-list-header">
         <span class="journal-item">Tables of Contents for the theory journals:</span>
         <span class="journal-item">连环画研究 <em>Lianhuanhua Research</em> <span class="dates">(1955-1957, 1978-1983)</span></span>
@@ -288,70 +287,4 @@ body.dark-mode .floating-controls button:hover {
     
     <div class="custom-nav">
       <a href="{{ '/' | relative_url }}">Browse</a>
-      <span class="separator">|</span>
-      <a href="{{ '/about/' | relative_url }}">About</a>
-      <span class="separator">|</span>
-      <a href="https://chinacomx.github.io/">ChinaComx: Home</a>
-    </div>
-  </div>
-
-  <div class="search-controls">
-    <input type="text" id="searchBar" placeholder="Search articles, authors, or issues...">
-    <button id="langToggle" class="lang-toggle-btn">Hide English</button>
-  </div>
-
-  <div id="archive-container">
-    {% for journal in site.data.journals %}
-    <div class="journal-section">
-      
-      <div class="collapsible" tabindex="0" aria-expanded="false">
-        <div class="titles-wrapper">
-          <span class="lang-zh">{{ journal.title_zh }}</span>
-          <span class="lang-en">{{ journal.title_en }}</span>
-        </div>
-      </div>
-      
-      <div class="content">
-        {% for issue in journal.issues %}
-        <div class="issue-header">
-          <span class="lang-zh">{{ issue.name_zh }}</span>
-          <span class="lang-en">{{ issue.name_en }}</span>
-        </div>
-        
-        <ul>
-          {% for article in issue.articles %}
-          <li class="toc-item">
-            <div class="toc-item-content">
-              <span class="lang-zh">
-                {{ article.title_zh }} 
-                {% if article.author_zh %}<span class="author-text">— {{ article.author_zh }}</span>{% endif %}
-              </span>
-              <span class="lang-en">
-                {{ article.title_en }}
-                {% if article.author_en %}<span class="author-text">— {{ article.author_en }}</span>{% endif %}
-              </span>
-            </div>
-            
-            {% if article.page %}
-            <div class="toc-item-page">
-              p. {{ article.page }}
-            </div>
-            {% endif %}
-          </li>
-          {% endfor %}
-        </ul>
-        {% endfor %}
-      </div>
-    </div>
-    {% endfor %}
-  </div>
-</div>
-
-<div class="floating-controls">
-    <button id="btn-text-decrease" aria-label="Decrease text size">A−</button>
-    <button id="btn-text-increase" aria-label="Increase text size">A+</button>
-    <button id="btn-theme-toggle" aria-label="Toggle dark mode">☽</button>
-  </div>
-</div> <script src="{{ '/assets/js/custom-search.js' | relative_url }}"></script>
-
-<script src="{{ '/assets/js/custom-search.js' | relative_url }}"></script>
+      <span class="separator
