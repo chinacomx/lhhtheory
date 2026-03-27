@@ -43,7 +43,7 @@ classes: wide
     font-size: 0.95em;
 }
 .journal-item {
-    display: block; /* Forces each journal onto its own neat line */
+    display: block; 
     margin-bottom: 4px;
     color: #444;
 }
@@ -51,7 +51,7 @@ classes: wide
     color: #555;
 }
 .journal-item .dates {
-    color: #888; /* Dims the dates slightly to reduce clutter */
+    color: #888; 
     font-size: 0.9em;
     margin-left: 6px;
 }
@@ -157,7 +157,6 @@ classes: wide
 
 .content ul { list-style: none; padding: 0; margin: 0; }
 
-/* NEW: Flexbox setup for list items to push page numbers right */
 .toc-item {
     padding: 12px 0;
     line-height: 1.4;
@@ -169,7 +168,6 @@ classes: wide
 .toc-item:last-child { border-bottom: none; }
 .toc-item:hover { background-color: #fafafa; }
 
-/* Wrapper for title/author to sit on the left */
 .toc-item-content {
     flex-grow: 1;
     padding-right: 20px;
@@ -178,11 +176,10 @@ classes: wide
 .toc-item-content .lang-en { display: block; font-size: 0.9em; font-style: italic; color: #666; margin-top: 4px; }
 .author-text { font-weight: 400; color: #888; font-style: normal; }
 
-/* Style for the page number sitting on the right */
 .toc-item-page {
     font-size: 0.95em;
     color: #666;
-    white-space: nowrap; /* Prevents page number from wrapping to a new line */
+    white-space: nowrap; 
 }
 
 .hidden { display: none !important; }
@@ -287,4 +284,70 @@ body.dark-mode .journal-item { color: #ccc; }
     
     <div class="custom-nav">
       <a href="{{ '/' | relative_url }}">Browse</a>
-      <span class="separator
+      <span class="separator">&#124;</span>
+      <a href="{{ '/about/' | relative_url }}">About</a>
+      <span class="separator">&#124;</span>
+      <a href="https://chinacomx.github.io/">ChinaComx: Home</a>
+    </div>
+  </div>
+
+  <div class="search-controls">
+    <input type="text" id="searchBar" placeholder="Search articles, authors, or issues...">
+    <button id="langToggle" class="lang-toggle-btn">Hide English</button>
+  </div>
+
+  <div id="archive-container">
+    {% for journal in site.data.journals %}
+    <div class="journal-section">
+      
+      <div class="collapsible" tabindex="0" aria-expanded="false">
+        <div class="titles-wrapper">
+          <span class="lang-zh">{{ journal.title_zh }}</span>
+          <span class="lang-en">{{ journal.title_en }}</span>
+        </div>
+      </div>
+      
+      <div class="content">
+        {% for issue in journal.issues %}
+        <div class="issue-header">
+          <span class="lang-zh">{{ issue.name_zh }}</span>
+          <span class="lang-en">{{ issue.name_en }}</span>
+        </div>
+        
+        <ul>
+          {% for article in issue.articles %}
+          <li class="toc-item">
+            <div class="toc-item-content">
+              <span class="lang-zh">
+                {{ article.title_zh }} 
+                {% if article.author_zh %}<span class="author-text">— {{ article.author_zh }}</span>{% endif %}
+              </span>
+              <span class="lang-en">
+                {{ article.title_en }}
+                {% if article.author_en %}<span class="author-text">— {{ article.author_en }}</span>{% endif %}
+              </span>
+            </div>
+            
+            {% if article.page %}
+            <div class="toc-item-page">
+              p. {{ article.page }}
+            </div>
+            {% endif %}
+          </li>
+          {% endfor %}
+        </ul>
+        {% endfor %}
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+
+  <div class="floating-controls">
+    <button id="btn-text-decrease" aria-label="Decrease text size">A−</button>
+    <button id="btn-text-increase" aria-label="Increase text size">A+</button>
+    <button id="btn-theme-toggle" aria-label="Toggle dark mode">☽</button>
+  </div>
+
+</div>
+
+<script src="{{ '/assets/js/custom-search.js' | relative_url }}"></script>
