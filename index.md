@@ -234,6 +234,7 @@ body.dark-mode .custom-header,
 body.dark-mode .site-subtitle,
 body.dark-mode .about-content {
     color: #e0e0e0;
+    
 }
 body.dark-mode .site-title-custom,
 body.dark-mode .collapsible .lang-zh,
@@ -268,6 +269,7 @@ body.dark-mode .floating-controls button {
 body.dark-mode .floating-controls button:hover {
     color: #66b2ff;
 }
+.body.dark-mode .journal-item { color: #ccc; }
     
 </style>
 
