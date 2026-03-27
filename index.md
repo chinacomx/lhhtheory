@@ -319,4 +319,11 @@ body.dark-mode .floating-controls button:hover {
   </div>
 </div>
 
+<div class="floating-controls">
+    <button id="btn-text-decrease" aria-label="Decrease text size">A−</button>
+    <button id="btn-text-increase" aria-label="Increase text size">A+</button>
+    <button id="btn-theme-toggle" aria-label="Toggle dark mode">☽</button>
+  </div>
+</div> <script src="{{ '/assets/js/custom-search.js' | relative_url }}"></script>
+
 <script src="{{ '/assets/js/custom-search.js' | relative_url }}"></script>
