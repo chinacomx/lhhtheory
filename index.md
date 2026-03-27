@@ -278,7 +278,7 @@ body.dark-mode .floating-controls button:hover {
   <div class="custom-header">
     <h1 class="site-title-custom">ChinaComx: Lianhuanhua Theory</h1>
 <div class="site-subtitle">
-      Table of Contents for the theory journals:
+     <h3 class="site-subtitle-custom">Table of Contents for the theory journals:</h3>
       <span class="journal-list-header">
         <span class="journal-item">连环画研究 <em>Lianhuanhua Research</em> <span class="dates">(1955-1957, 1978-1983)</span></span>
         <span class="journal-item">连环画论丛 <em>Lianhuanhua Discussion Series</em> <span class="dates">(1980-1986)</span></span>
