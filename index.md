@@ -52,11 +52,15 @@ classes: wide
     margin: 0 10px;
 }
 
-/* --- SEARCH BAR STYLES --- */
-#searchBar {
-    width: 100%;
-    padding: 14px 20px;
+/* --- SEARCH & CONTROLS STYLES --- */
+.search-controls {
+    display: flex;
+    gap: 12px;
     margin: 10px 0 40px 0;
+}
+#searchBar {
+    flex-grow: 1;
+    padding: 14px 20px;
     font-size: 16px;
     border: 1px solid #ddd;
     border-radius: 8px;
@@ -68,34 +72,26 @@ classes: wide
     border-color: #999;
     box-shadow: 0 4px 12px rgba(0,0,0,0.08);
 }
-
-/* --- BILINGUAL TOC STYLES --- */
-.journal-section {
-    margin-bottom: 25px;
-}
-.collapsible {
+.lang-toggle-btn {
+    background-color: #f7f7f7;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 0 20px;
+    font-size: 14px;
+    color: #444;
     cursor: pointer;
-    padding: 12px 0;
-    border-bottom: 2px solid #eaeaea;
-    margin: 0;
-    transition: color 0.2s;
-    user-select: none;
-    position: relative; /* Required for the +/- icon alignment */
+    font-weight: 600;
+    transition: all 0.2s ease;
+    white-space: nowrap;
 }
-.collapsible:hover {
-    color: #666;
+.lang-toggle-btn:hover {
+    background-color: #eaeaea;
+    color: #111;
 }
-.collapsible::after {
-    content: '+';
-    position: absolute;
-    right: 0;
-    top: 20px;
-    font-size: 1.2em;
-    color: #bbb;
-    font-weight: 400;
-}
-.collapsible[aria-expanded="true"]::after {
-    content: '−';
+
+/* The magic class that hides English when applied */
+.hide-en .lang-en {
+    display: none !important;
 }
 
 /* Bilingual Typography */
@@ -164,8 +160,11 @@ classes: wide
     </div>
   </div>
 
-  <input type="text" id="searchBar" placeholder="Search articles, authors, or issues...">
-
+<div class="search-controls">
+    <input type="text" id="searchBar" placeholder="Search articles, authors, or issues...">
+    <button id="langToggle" class="lang-toggle-btn">Hide English</button>
+  </div>
+  
   <div id="archive-container">
     {% for journal in site.data.journals %}
     <div class="journal-section">
