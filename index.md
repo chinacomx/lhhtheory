@@ -31,10 +31,29 @@ classes: wide
     letter-spacing: -0.5px;
 }
 .site-subtitle {
-    font-size: 1.1em;
+    font-size: 1.05em;
     color: #555;
-    margin: 0 0 20px 0;
-    line-height: 1.5;
+    margin: 0 0 25px 0;
+    line-height: 1.6;
+}
+.journal-list-header {
+    display: inline-block;
+    text-align: center;
+    margin-top: 8px;
+    font-size: 0.95em;
+}
+.journal-item {
+    display: block; /* Forces each journal onto its own neat line */
+    margin-bottom: 4px;
+    color: #444;
+}
+.journal-item em {
+    color: #555;
+}
+.journal-item .dates {
+    color: #888; /* Dims the dates slightly to reduce clutter */
+    font-size: 0.9em;
+    margin-left: 6px;
 }
 .custom-nav {
     font-size: 1.05em;
