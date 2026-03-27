@@ -49,8 +49,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 return; 
             }
 
-            items.forEach(item => {
-                const text = item.textContent.toLowerCase();
+           items.forEach(item => {
+                // .replace(/\s+/g, ' ') normalizes the invisible line-breaks in the HTML 
+                // so the search engine reads it cleanly as one block of text
+                const text = item.textContent.toLowerCase().replace(/\s+/g, ' ');
                 if (text.includes(searchTerm)) {
                     item.classList.remove('hidden');
                     hasMatchInJournal = true;
