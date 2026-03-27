@@ -1,0 +1,28 @@
+- title: "Journal of History"
+  issues:
+    - name: "Volume 1, Issue 1 (Spring 2023)"
+      articles:
+        - title: "The Origins of the Printing Press"
+          author: "Jane Doe"
+        - title: "Industrial Revolution Impacts"
+          author: "John Smith"
+    - name: "Volume 1, Issue 2 (Fall 2023)"
+      articles:
+        - title: "Trade Routes in the 15th Century"
+          author: "Alice Johnson"
+
+- title: "Journal of Science"
+  issues:
+    - name: "Volume 5, Issue 1 (Jan 2024)"
+      articles:
+        - title: "Advancements in Quantum Computing"
+          author: "Dr. A. Turing"
+        - title: "Understanding Dark Matter"
+          author: "B. Hubble"
+
+- title: "Journal of Literature"
+  issues:
+    - name: "Volume 2, Issue 3 (Winter 2023)"
+      articles:
+        - title: "Modernism in Poetry"
+          author: "E. Pound"
