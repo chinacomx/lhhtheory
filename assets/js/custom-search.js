@@ -15,40 +15,37 @@ document.addEventListener('DOMContentLoaded', function() {
 
     if (langToggle && archiveContainer) {
         langToggle.addEventListener('click', function() {
-            // Toggle the 'hide-en' class on the whole archive
             archiveContainer.classList.toggle('hide-en');
-            
-            // Update the button text
-            if (archiveContainer.classList.contains('hide-en')) {
-                this.textContent = 'Show English';
-            } else {
-                this.textContent = 'Hide English';
-            }
+            this.textContent = archiveContainer.classList.contains('hide-en') ? 'Show English' : 'Hide English';
         });
     }
 
-    // --- 2. Collapsible Headers Logic ---
-    const collapsibles = document.querySelectorAll('.collapsible');
+    // --- 2. BULLETPROOF COLLAPSIBLE LOGIC (Event Delegation) ---
+    // This listens to the whole document, ensuring clicks always work 
+    // even if the HTML loads slightly late.
+    document.addEventListener('click', function(e) {
+        const header = e.target.closest('.collapsible');
+        if (!header) return; // Ignore clicks that aren't on a header
 
-    collapsibles.forEach(button => {
-        button.setAttribute('tabindex', '0');
-        button.setAttribute('aria-expanded', 'false');
+        const parent = header.closest('.journal-section');
+        if (!parent) return;
 
-        const toggleSection = function() {
-            const parent = this.closest('.journal-section');
-            const content = parent.querySelector('.content');
-            
-            const isExpanded = content.classList.toggle('active');
-            this.setAttribute('aria-expanded', isExpanded);
-        };
+        const content = parent.querySelector('.content');
+        if (!content) return;
 
-        button.addEventListener('click', toggleSection);
-        button.addEventListener('keypress', function(e) {
-            if (e.key === 'Enter' || e.key === ' ') {
+        const isExpanded = content.classList.toggle('active');
+        header.setAttribute('aria-expanded', isExpanded);
+    });
+
+    // Keyboard support for collapsibles
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+            const header = e.target.closest('.collapsible');
+            if (header) {
                 e.preventDefault();
-                toggleSection.call(this);
+                header.click();
             }
-        });
+        }
     });
 
     // --- 3. Search Bar Logic ---
@@ -71,7 +68,6 @@ document.addEventListener('DOMContentLoaded', function() {
             }
 
             items.forEach(item => {
-                // The .replace(/\s+/g, ' ') handles the spacing between the Chinese and English spans
                 const text = item.textContent.toLowerCase().replace(/\s+/g, ' ');
                 if (text.includes(searchTerm)) {
                     item.classList.remove('hidden');
@@ -83,8 +79,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
             if (hasMatchInJournal) {
                 journal.style.display = 'block';
-                contentDiv.classList.add('active');
-                header.setAttribute('aria-expanded', 'true');
+                if(contentDiv) contentDiv.classList.add('active');
+                if(header) header.setAttribute('aria-expanded', 'true');
             } else {
                 journal.style.display = 'none';
             }
@@ -101,7 +97,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const btnTheme = document.getElementById('btn-theme-toggle');
     const archiveWrapper = document.querySelector('.archive-wrapper');
 
-    // 4a. Font Size Logic
     let currentZoom = localStorage.getItem('site-zoom') ? parseInt(localStorage.getItem('site-zoom')) : 100;
     
     function applyZoom() {
@@ -112,38 +107,37 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     if (btnIncrease && btnDecrease) {
-        applyZoom(); // Apply on load
+        applyZoom(); 
         
         btnIncrease.addEventListener('click', () => {
-            if (currentZoom < 150) { // Max zoom 150%
+            if (currentZoom < 150) { 
                 currentZoom += 10;
                 applyZoom();
             }
         });
         
         btnDecrease.addEventListener('click', () => {
-            if (currentZoom > 80) { // Min zoom 80%
+            if (currentZoom > 80) { 
                 currentZoom -= 10;
                 applyZoom();
             }
         });
     }
 
-    // 4b. Dark Mode Logic
     let isDarkMode = localStorage.getItem('dark-mode') === 'true';
 
     function applyTheme() {
         if (isDarkMode) {
             document.body.classList.add('dark-mode');
-            if (btnTheme) btnTheme.textContent = '☀'; // Sun icon for dark mode
+            if (btnTheme) btnTheme.textContent = '☀'; 
         } else {
             document.body.classList.remove('dark-mode');
-            if (btnTheme) btnTheme.textContent = '☽'; // Moon icon for light mode
+            if (btnTheme) btnTheme.textContent = '☽'; 
         }
     }
 
     if (btnTheme) {
-        applyTheme(); // Apply on load
+        applyTheme(); 
         
         btnTheme.addEventListener('click', () => {
             isDarkMode = !isDarkMode;
