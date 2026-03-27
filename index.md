@@ -277,7 +277,14 @@ body.dark-mode .floating-controls button:hover {
   
   <div class="custom-header">
     <h1 class="site-title-custom">ChinaComx: Lianhuanhua Theory</h1>
-    <p class="site-subtitle">Table of Contents for the theory journals 连环画研究 <i>Lianhuanhua Research</i> (1955-1957, 1978-1983), 连环画论丛 <i>Lianhuanhua Discussion Series</i> (1980-1986), and 连环画艺术 <i>Lianhuanhua Art</i> (1987-2012)</p>
+<div class="site-subtitle">
+      Table of Contents for the theory journals:
+      <span class="journal-list-header">
+        <span class="journal-item">连环画研究 <em>Lianhuanhua Research</em> <span class="dates">(1955-1957, 1978-1983)</span></span>
+        <span class="journal-item">连环画论丛 <em>Lianhuanhua Discussion Series</em> <span class="dates">(1980-1986)</span></span>
+        <span class="journal-item">连环画艺术 <em>Lianhuanhua Art</em> <span class="dates">(1987-2012)</span></span>
+      </span>
+    </div>
     
     <div class="custom-nav">
       <a href="{{ '/' | relative_url }}">Browse</a>
