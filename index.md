@@ -19,7 +19,7 @@ classes: wide
 
 /* --- HEADER STYLES --- */
 .custom-header {
-    margin-bottom: 40px;
+    margin-bottom: 30px;
     border-bottom: 2px solid #222;
     padding-bottom: 20px;
 }
@@ -88,35 +88,78 @@ classes: wide
     background-color: #eaeaea;
     color: #111;
 }
-
-/* The magic class that hides English when applied */
 .hide-en .lang-en {
     display: none !important;
 }
 
-/* Bilingual Typography */
-.lang-zh { display: block; font-weight: 600; color: #111; }
-.lang-en { display: block; font-size: 0.65em; color: #777; font-weight: 400; margin-top: 4px; letter-spacing: 0.2px; }
+/* --- BILINGUAL TOC STYLES --- */
+.journal-section {
+    margin-bottom: 25px;
+}
 
-.collapsible .lang-zh { font-size: 1.6em; }
-.collapsible .lang-en { font-size: 0.9em; margin-top: 6px; }
+/* The Fixed Collapsible Header using Flexbox */
+.collapsible {
+    cursor: pointer;
+    padding: 16px 0;
+    border-bottom: 2px solid #eaeaea;
+    margin: 20px 0 0 0;
+    display: flex;
+    justify-content: space-between; /* Pushes text left, icon right */
+    align-items: center; /* Vertically centers the icon */
+    user-select: none;
+    transition: background-color 0.2s ease;
+}
+.collapsible:hover {
+    background-color: #fcfcfc;
+}
+.titles-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 4px; /* Space between ZH and EN */
+}
 
+/* Restored Header Typography */
+.collapsible .lang-zh { 
+    font-size: 1.6em; 
+    font-weight: 600; 
+    color: #222; 
+    line-height: 1.2;
+}
+.collapsible .lang-en { 
+    font-size: 0.9em; 
+    color: #777; 
+    font-weight: 400; 
+    letter-spacing: 0.2px; 
+}
+
+/* The Restored +/- Icon */
+.collapsible::after {
+    content: '+';
+    font-size: 1.8em;
+    color: #999;
+    font-weight: 300;
+    padding-left: 20px;
+}
+.collapsible[aria-expanded="true"]::after {
+    content: '−';
+}
+
+/* Content & List Styles */
 .content {
     display: none;
-    padding: 20px 0 30px 0;
+    padding: 10px 0 30px 0;
     animation: fadeIn 0.3s ease-out;
 }
 .content.active {
     display: block;
 }
-
 .issue-header {
     margin: 30px 0 15px 0;
     border-bottom: 1px solid #f5f5f5;
     padding-bottom: 8px;
 }
-.issue-header .lang-zh { font-size: 1.1em; color: #444; }
-.issue-header .lang-en { font-size: 0.85em; text-transform: uppercase; }
+.issue-header .lang-zh { display: block; font-size: 1.1em; color: #444; font-weight: 600; }
+.issue-header .lang-en { display: block; font-size: 0.85em; color: #777; text-transform: uppercase; margin-top: 4px; }
 
 .content ul {
     list-style: none;
@@ -128,15 +171,12 @@ classes: wide
     line-height: 1.4;
     border-bottom: 1px dashed #f0f0f0;
 }
-.toc-item:last-child {
-    border-bottom: none;
-}
-.toc-item:hover {
-    background-color: #fafafa;
-}
-.toc-item .lang-zh { font-size: 1.05em; font-weight: 500; }
-.toc-item .lang-en { font-size: 0.9em; font-style: italic; color: #666; }
-.author-text { font-weight: 400; color: #888; }
+.toc-item:last-child { border-bottom: none; }
+.toc-item:hover { background-color: #fafafa; }
+
+.toc-item .lang-zh { display: block; font-size: 1.05em; font-weight: 500; color: #111; }
+.toc-item .lang-en { display: block; font-size: 0.9em; font-style: italic; color: #666; margin-top: 4px; }
+.author-text { font-weight: 400; color: #888; font-style: normal; }
 
 .hidden { display: none !important; }
 @keyframes fadeIn {
@@ -160,18 +200,20 @@ classes: wide
     </div>
   </div>
 
-<div class="search-controls">
+  <div class="search-controls">
     <input type="text" id="searchBar" placeholder="Search articles, authors, or issues...">
     <button id="langToggle" class="lang-toggle-btn">Hide English</button>
   </div>
-  
+
   <div id="archive-container">
     {% for journal in site.data.journals %}
     <div class="journal-section">
       
       <div class="collapsible" tabindex="0" aria-expanded="false">
-        <span class="lang-zh">{{ journal.title_zh }}</span>
-        <span class="lang-en">{{ journal.title_en }}</span>
+        <div class="titles-wrapper">
+          <span class="lang-zh">{{ journal.title_zh }}</span>
+          <span class="lang-en">{{ journal.title_en }}</span>
+        </div>
       </div>
       
       <div class="content">
