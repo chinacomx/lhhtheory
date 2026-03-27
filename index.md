@@ -4,10 +4,8 @@ classes: wide
 ---
 
 <style>
-/* Hide the default Minimal Mistakes title so we can build our own */
-.page__title {
-    display: none !important;
-}
+/* Hide the default Minimal Mistakes title */
+.page__title { display: none !important; }
 
 /* Sleek, Minimalist, Centered Container */
 .archive-wrapper {
@@ -22,6 +20,8 @@ classes: wide
     margin-bottom: 30px;
     border-bottom: 2px solid #222;
     padding-bottom: 20px;
+    padding-top: 50px; 
+    text-align: center; 
 }
 .site-title-custom {
     font-size: 2.2em;
@@ -88,51 +88,31 @@ classes: wide
     background-color: #eaeaea;
     color: #111;
 }
-.hide-en .lang-en {
-    display: none !important;
-}
+.hide-en .lang-en { display: none !important; }
 
 /* --- BILINGUAL TOC STYLES --- */
-.journal-section {
-    margin-bottom: 25px;
-}
+.journal-section { margin-bottom: 25px; }
 
-/* The Fixed Collapsible Header using Flexbox */
 .collapsible {
     cursor: pointer;
     padding: 16px 0;
     border-bottom: 2px solid #eaeaea;
     margin: 20px 0 0 0;
     display: flex;
-    justify-content: space-between; /* Pushes text left, icon right */
-    align-items: center; /* Vertically centers the icon */
+    justify-content: space-between; 
+    align-items: center; 
     user-select: none;
     transition: background-color 0.2s ease;
 }
-.collapsible:hover {
-    background-color: #fcfcfc;
-}
+.collapsible:hover { background-color: #fcfcfc; }
 .titles-wrapper {
     display: flex;
     flex-direction: column;
-    gap: 4px; /* Space between ZH and EN */
+    gap: 4px; 
 }
+.collapsible .lang-zh { font-size: 1.6em; font-weight: 600; color: #222; line-height: 1.2; }
+.collapsible .lang-en { font-size: 0.9em; color: #777; font-weight: 400; letter-spacing: 0.2px; }
 
-/* Restored Header Typography */
-.collapsible .lang-zh { 
-    font-size: 1.6em; 
-    font-weight: 600; 
-    color: #222; 
-    line-height: 1.2;
-}
-.collapsible .lang-en { 
-    font-size: 0.9em; 
-    color: #777; 
-    font-weight: 400; 
-    letter-spacing: 0.2px; 
-}
-
-/* The Restored +/- Icon */
 .collapsible::after {
     content: '+';
     font-size: 1.8em;
@@ -140,19 +120,14 @@ classes: wide
     font-weight: 300;
     padding-left: 20px;
 }
-.collapsible[aria-expanded="true"]::after {
-    content: '−';
-}
+.collapsible[aria-expanded="true"]::after { content: '−'; }
 
-/* Content & List Styles */
 .content {
     display: none;
     padding: 10px 0 30px 0;
     animation: fadeIn 0.3s ease-out;
 }
-.content.active {
-    display: block;
-}
+.content.active { display: block; }
 .issue-header {
     margin: 30px 0 15px 0;
     border-bottom: 1px solid #f5f5f5;
@@ -161,22 +136,35 @@ classes: wide
 .issue-header .lang-zh { display: block; font-size: 1.1em; color: #444; font-weight: 600; }
 .issue-header .lang-en { display: block; font-size: 0.85em; color: #777; text-transform: uppercase; margin-top: 4px; }
 
-.content ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
+.content ul { list-style: none; padding: 0; margin: 0; }
+
+/* NEW: Flexbox setup for list items to push page numbers right */
 .toc-item {
     padding: 12px 0;
     line-height: 1.4;
     border-bottom: 1px dashed #f0f0f0;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
 }
 .toc-item:last-child { border-bottom: none; }
 .toc-item:hover { background-color: #fafafa; }
 
-.toc-item .lang-zh { display: block; font-size: 1.05em; font-weight: 500; color: #111; }
-.toc-item .lang-en { display: block; font-size: 0.9em; font-style: italic; color: #666; margin-top: 4px; }
+/* Wrapper for title/author to sit on the left */
+.toc-item-content {
+    flex-grow: 1;
+    padding-right: 20px;
+}
+.toc-item-content .lang-zh { display: block; font-size: 1.05em; font-weight: 500; color: #111; }
+.toc-item-content .lang-en { display: block; font-size: 0.9em; font-style: italic; color: #666; margin-top: 4px; }
 .author-text { font-weight: 400; color: #888; font-style: normal; }
+
+/* Style for the page number sitting on the right */
+.toc-item-page {
+    font-size: 0.95em;
+    color: #666;
+    white-space: nowrap; /* Prevents page number from wrapping to a new line */
+}
 
 .hidden { display: none !important; }
 @keyframes fadeIn {
@@ -226,14 +214,22 @@ classes: wide
         <ul>
           {% for article in issue.articles %}
           <li class="toc-item">
-            <span class="lang-zh">
-              {{ article.title_zh }} 
-              {% if article.author_zh %}<span class="author-text">— {{ article.author_zh }}</span>{% endif %}
-            </span>
-            <span class="lang-en">
-              {{ article.title_en }}
-              {% if article.author_en %}<span class="author-text">— {{ article.author_en }}</span>{% endif %}
-            </span>
+            <div class="toc-item-content">
+              <span class="lang-zh">
+                {{ article.title_zh }} 
+                {% if article.author_zh %}<span class="author-text">— {{ article.author_zh }}</span>{% endif %}
+              </span>
+              <span class="lang-en">
+                {{ article.title_en }}
+                {% if article.author_en %}<span class="author-text">— {{ article.author_en }}</span>{% endif %}
+              </span>
+            </div>
+            
+            {% if article.page %}
+            <div class="toc-item-page">
+              p. {{ article.page }}
+            </div>
+            {% endif %}
           </li>
           {% endfor %}
         </ul>
