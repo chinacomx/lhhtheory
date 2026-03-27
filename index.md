@@ -17,7 +17,7 @@ classes: wide
     color: #333;
 }
 
-/* --- NEW HEADER STYLES --- */
+/* --- HEADER STYLES --- */
 .custom-header {
     margin-bottom: 40px;
     border-bottom: 2px solid #222;
@@ -52,7 +52,7 @@ classes: wide
     margin: 0 10px;
 }
 
-/* --- SEARCH BAR & TOC STYLES --- */
+/* --- SEARCH BAR STYLES --- */
 #searchBar {
     width: 100%;
     padding: 14px 20px;
@@ -68,6 +68,8 @@ classes: wide
     border-color: #999;
     box-shadow: 0 4px 12px rgba(0,0,0,0.08);
 }
+
+/* --- BILINGUAL TOC STYLES --- */
 .journal-section {
     margin-bottom: 25px;
 }
@@ -76,18 +78,18 @@ classes: wide
     padding: 12px 0;
     border-bottom: 2px solid #eaeaea;
     margin: 0;
-    font-size: 1.6em;
-    font-weight: 600;
-    color: #222;
     transition: color 0.2s;
     user-select: none;
+    position: relative; /* Required for the +/- icon alignment */
 }
 .collapsible:hover {
     color: #666;
 }
 .collapsible::after {
     content: '+';
-    float: right;
+    position: absolute;
+    right: 0;
+    top: 20px;
     font-size: 1.2em;
     color: #bbb;
     font-weight: 400;
@@ -95,6 +97,14 @@ classes: wide
 .collapsible[aria-expanded="true"]::after {
     content: '−';
 }
+
+/* Bilingual Typography */
+.lang-zh { display: block; font-weight: 600; color: #111; }
+.lang-en { display: block; font-size: 0.65em; color: #777; font-weight: 400; margin-top: 4px; letter-spacing: 0.2px; }
+
+.collapsible .lang-zh { font-size: 1.6em; }
+.collapsible .lang-en { font-size: 0.9em; margin-top: 6px; }
+
 .content {
     display: none;
     padding: 20px 0 30px 0;
@@ -103,31 +113,36 @@ classes: wide
 .content.active {
     display: block;
 }
-.content h3 {
-    font-size: 1.1em;
-    color: #555;
+
+.issue-header {
     margin: 30px 0 15px 0;
     border-bottom: 1px solid #f5f5f5;
-    padding-bottom: 5px;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
+    padding-bottom: 8px;
 }
+.issue-header .lang-zh { font-size: 1.1em; color: #444; }
+.issue-header .lang-en { font-size: 0.85em; text-transform: uppercase; }
+
 .content ul {
     list-style: none;
     padding: 0;
     margin: 0;
 }
 .toc-item {
-    padding: 8px 0;
-    line-height: 1.6;
-    border-bottom: 1px solid transparent;
+    padding: 12px 0;
+    line-height: 1.4;
+    border-bottom: 1px dashed #f0f0f0;
+}
+.toc-item:last-child {
+    border-bottom: none;
 }
 .toc-item:hover {
     background-color: #fafafa;
 }
-.hidden {
-    display: none !important;
-}
+.toc-item .lang-zh { font-size: 1.05em; font-weight: 500; }
+.toc-item .lang-en { font-size: 0.9em; font-style: italic; color: #666; }
+.author-text { font-weight: 400; color: #888; }
+
+.hidden { display: none !important; }
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(-5px); }
     to { opacity: 1; transform: translateY(0); }
@@ -154,15 +169,30 @@ classes: wide
   <div id="archive-container">
     {% for journal in site.data.journals %}
     <div class="journal-section">
-      <h2 class="collapsible" tabindex="0" aria-expanded="false">{{ journal.title }}</h2>
+      
+      <div class="collapsible" tabindex="0" aria-expanded="false">
+        <span class="lang-zh">{{ journal.title_zh }}</span>
+        <span class="lang-en">{{ journal.title_en }}</span>
+      </div>
+      
       <div class="content">
         {% for issue in journal.issues %}
-        <h3>{{ issue.name }}</h3>
+        <div class="issue-header">
+          <span class="lang-zh">{{ issue.name_zh }}</span>
+          <span class="lang-en">{{ issue.name_en }}</span>
+        </div>
+        
         <ul>
           {% for article in issue.articles %}
           <li class="toc-item">
-            <strong>{{ article.title }}</strong> 
-            {% if article.author %} — <em style="color: #666;">{{ article.author }}</em>{% endif %}
+            <span class="lang-zh">
+              {{ article.title_zh }} 
+              {% if article.author_zh %}<span class="author-text">— {{ article.author_zh }}</span>{% endif %}
+            </span>
+            <span class="lang-en">
+              {{ article.title_en }}
+              {% if article.author_en %}<span class="author-text">— {{ article.author_en }}</span>{% endif %}
+            </span>
           </li>
           {% endfor %}
         </ul>
