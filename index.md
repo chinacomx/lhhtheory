@@ -177,7 +177,7 @@ classes: wide
   
   <div class="custom-header">
     <h1 class="site-title-custom">ChinaComx: Lianhuanhua Theory</h1>
-    <p class="site-subtitle">Table of Contents for 连环画研究(1955-1957, 1978-1983) ，连环画论丛 (1980-1986)，and 连环画艺术 (1987-2012)</p>
+    <p class="site-subtitle">Table of Contents for the theory journals 连环画研究 <i>Lianhuanhua Research</i> (1955-1957, 1978-1983), 连环画论丛 <i>Lianhuanhua Discussion Series</i> (1980-1986), and 连环画艺术 <i>Lianhuanhua Art</i> (1987-2012)</p>
     
     <div class="custom-nav">
       <a href="{{ '/' | relative_url }}">Browse</a>
