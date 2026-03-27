@@ -293,7 +293,7 @@ body.dark-mode .journal-item { color: #ccc; }
 
   <div class="search-controls">
     <input type="text" id="searchBar" placeholder="Search articles, authors, or issues...">
-    <button id="langToggle" class="lang-toggle-btn">Hide English</button>
+    <button id="langToggle" class="lang-toggle-btn">Hide Translation</button>
   </div>
 
   <div id="archive-container">
