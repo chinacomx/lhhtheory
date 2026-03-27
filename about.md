@@ -140,7 +140,12 @@ body.dark-mode .floating-controls button:hover {
 <div class="archive-wrapper">
   
   <div class="custom-header">
-    <h1 class="site-title-custom">About the Archive</h1>
+    <h1 class="site-title-custom">ChinaComx: Lianhuanhua Theory</h1>
+    <div class="site-subtitle">
+      <span class="journal-list-header">
+        <span class="journal-item">About</span>
+      </span>
+    </div>
     
     <div class="custom-nav">
       <a href="{{ '/' | relative_url }}">Browse</a>
