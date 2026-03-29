@@ -155,7 +155,8 @@ body.dark-mode .floating-controls button:hover {
   <div class="about-content">
 
 <h3>A few words about lianhuanhua theory journals</h3>
-<h5>Written by Damian Mandzunowski, 1 April 2026</h5>
+<h4>Written by Damian Mandzunowski</h4>
+<h4 style="text-align:right;">1 April 2026</h4>
 
 <p>The Chinese socialist mediascape was diverse, and pictorial journals enjoyed a stable presence within it. As textual-visual extensions of ongoing propaganda drives, titles such as <i>Renmin huabao</i> 人民画报, which circulated around the world as <a href="https://www.bannedthought.net/China/Magazines/ChinaPictorial/index.htm" target="_blank"><i>China Pictorial</i></a>, featured carefully selected, high-quality photo-stories in large formats and on glossy paper. Others focused more on comic strips and cartoons; of these, perhaps the two most well-known are <i>Manhua yuekan</i> 漫画月刊 (Manhua Monthly), published from 1950 to 1960 and presenting primarily political and social critique in the form of caricature, and <i>Lianhuanhua bao</i> 连环画报 (Picture Story), published from 1951 to 1960 and then restarted in 1973 as the major publication for multi-panel visual-textual narratives. Alongside these and dozens of other pictorials, China’s newsstands also featured a wide range of art and literature theory journals. Titles such as <i>Meishu</i> or <i>Dushu</i> catered to an informed readership of writers, art practitioners, publishers, journalists, and academics, and were thus more text-heavy.</p>
 
@@ -185,10 +186,10 @@ body.dark-mode .floating-controls button:hover {
 
 <div class="custom-chinacomx-footer" style="text-align: center; margin-top: 60px; padding-top: 30px; border-top: 1px solid #eaeaea; padding-bottom: 40px;">
     <p style="color: #555; font-size: 0.9em; margin-bottom: 15px;">
-      <i>Work on this repository was sponsored by the following institutions — learn more <a href="https://chinacomx.github.io/about/" target="_blank" style="color: #0056b3; text-decoration: none;">here</a></i>:
+      <i>Work on this repository was sponsored by the following institutions — learn more <a href="{{ '/about/' | relative_url }}" target="_blank" style="color: #0056b3; text-decoration: none;">here</a></i>:
     </p>
     <div style="display: flex; justify-content: center;">
-      <img src="https://raw.githubusercontent.com/chinacomx/lhhtheory/main/static/images/lhhtheory-footer-logos.jpg" alt="Sponsoring Institutions" style="max-width: 100%; height: auto; mix-blend-mode: multiply;">
+      <img src="{{ '/static/images/lhhtheory-footer-logos.jpg' | relative_url }}" alt="Sponsoring Institutions" style="max-width: 100%; height: auto; mix-blend-mode: multiply;">
     </div>
   </div>
   
