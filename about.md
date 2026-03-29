@@ -57,6 +57,59 @@ title: "Lianhuanhua Theory"
 .about-content p {
     margin-bottom: 20px;
 }
+.about-content h3 {
+    font-size: 1.5em;
+    color: #222;
+    border-bottom: 1px solid #eaeaea;
+    padding-bottom: 8px;
+    margin-top: 35px;
+    margin-bottom: 15px;
+}
+.about-content h4 {
+    font-size: 1.1em;
+    color: #555;
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+/* --- CITATION BOX STYLES --- */
+.citation-wrapper {
+    position: relative;
+    margin: 20px 0 40px 0;
+}
+.citation-box {
+    background-color: #f8f9fa;
+    border-left: 4px solid #0056b3;
+    padding: 18px 70px 18px 20px; 
+    border-radius: 0 6px 6px 0;
+    font-size: 0.95em;
+    color: #333;
+    line-height: 1.6;
+}
+.copy-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background-color: #eaeaea;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 6px 12px;
+    font-size: 0.85em;
+    cursor: pointer;
+    color: #444;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+.copy-btn:hover {
+    background-color: #ddd;
+    color: #111;
+}
+.copy-btn.copied {
+    background-color: #28a745;
+    color: white;
+    border-color: #28a745;
+}
 
 /* --- FLOATING ACCESSIBILITY WIDGET --- */
 .floating-controls {
@@ -108,6 +161,13 @@ body.dark-mode .issue-header .lang-zh,
 body.dark-mode .toc-item-content .lang-zh {
     color: #fcfcfc;
 }
+body.dark-mode .about-content h3 {
+    color: #fcfcfc;
+    border-color: #333;
+}
+body.dark-mode .about-content h4 {
+    color: #ccc;
+}
 body.dark-mode .custom-header,
 body.dark-mode .issue-header,
 body.dark-mode .collapsible,
@@ -135,6 +195,10 @@ body.dark-mode .floating-controls button {
 body.dark-mode .floating-controls button:hover {
     color: #66b2ff;
 }
+body.dark-mode .custom-chinacomx-footer { border-color: #333 !important; }
+body.dark-mode .citation-box { background-color: #1a1a1a; border-left-color: #66b2ff; color: #ccc; }
+body.dark-mode .copy-btn { background-color: #333; border-color: #444; color: #ddd; }
+body.dark-mode .copy-btn:hover { background-color: #444; color: #fff; }
     
 </style>
 
@@ -154,42 +218,52 @@ body.dark-mode .floating-controls button:hover {
 
   <div class="about-content">
 
-<h3>A few words about lianhuanhua theory journals</h3>
-<h4>Written by Damian Mandzunowski</h4>
-<h4 style="text-align:right;">1 April 2026</h4>
+    <h3>A few words about lianhuanhua theory journals</h3>
+    <h4>Written by Damian Mandzunowski</h4>
+    <h4 style="text-align:right;">1 April 2026</h4>
 
-<p>The Chinese socialist mediascape was diverse, and pictorial journals enjoyed a stable presence within it. As textual-visual extensions of ongoing propaganda drives, titles such as <i>Renmin huabao</i> 人民画报, which circulated around the world as <a href="https://www.bannedthought.net/China/Magazines/ChinaPictorial/index.htm" target="_blank"><i>China Pictorial</i></a>, featured carefully selected, high-quality photo-stories in large formats and on glossy paper. Others focused more on comic strips and cartoons; of these, perhaps the two most well-known are <i>Manhua yuekan</i> 漫画月刊 (Manhua Monthly), published from 1950 to 1960 and presenting primarily political and social critique in the form of caricature, and <i>Lianhuanhua bao</i> 连环画报 (Picture Story), published from 1951 to 1960 and then restarted in 1973 as the major publication for multi-panel visual-textual narratives. Alongside these and dozens of other pictorials, China’s newsstands also featured a wide range of art and literature theory journals. Titles such as <i>Meishu</i> or <i>Dushu</i> catered to an informed readership of writers, art practitioners, publishers, journalists, and academics, and were thus more text-heavy.</p>
+    <p>The Chinese socialist mediascape was diverse, and pictorial journals enjoyed a stable presence within it. As textual-visual extensions of ongoing propaganda drives, titles such as <i>Renmin huabao</i> 人民画报, which circulated around the world as <a href="https://www.bannedthought.net/China/Magazines/ChinaPictorial/index.htm" target="_blank"><i>China Pictorial</i></a>, featured carefully selected, high-quality photo-stories in large formats and on glossy paper. Others focused more on comic strips and cartoons; of these, perhaps the two most well-known are <i>Manhua yuekan</i> 漫画月刊 (Manhua Monthly), published from 1950 to 1960 and presenting primarily political and social critique in the form of caricature, and <i>Lianhuanhua bao</i> 连环画报 (Picture Story), published from 1951 to 1960 and then restarted in 1973 as the major publication for multi-panel visual-textual narratives. Alongside these and dozens of other pictorials, China’s newsstands also featured a wide range of art and literature theory journals. Titles such as <i>Meishu</i> or <i>Dushu</i> catered to an informed readership of writers, art practitioners, publishers, journalists, and academics, and were thus more text-heavy.</p>
 
-<p>Even though many important discussions about the style and contents of new socialist lianhuanhua played out on the pages of <i>Lianhuanhua bao</i>, the journals whose (semi complete) tables of contents we feature on this website—<i>Lianhuanhua yanjiu</i> 连环画研究 (Lianhuanhua Research), <i>Lianhuanhua luncong</i> 连环画论丛 (Lianhuanhua Discussion Series), and <i>Lianhuanhua yishu</i> 连环画艺术 (Lianhuanhua Art)—were the three most important publications of the period entirely focused on presenting lianhuanhua theory, analyses, criticism, and, later on, readers’ letters and creators’ recollections. As such, all three journals are of great relevance for the study of lianhuanhua: they inform us about the internal discussions between the people hands-on involved in the creation of lianhuanhua over decades; they provide insights into the impact of politics on these processes, both via early campaign-related criticism and later market-driven recommendations; and they showcase feedback and texts sent in by actual readers that were deemed relevant enough to be printed and circulated within the broader lianhuanhua community. Given all this, and also due to their relative rarity in available library collections, we decided to create this searchable overview of their tables of contents to offer a window into this fascinating source.</p>
+    <p>Even though many important discussions about the style and contents of new socialist lianhuanhua played out on the pages of <i>Lianhuanhua bao</i>, the journals whose (semi complete) tables of contents we feature on this website—<i>Lianhuanhua yanjiu</i> 连环画研究 (Lianhuanhua Research), <i>Lianhuanhua luncong</i> 连环画论丛 (Lianhuanhua Discussion Series), and <i>Lianhuanhua yishu</i> 连环画艺术 (Lianhuanhua Art)—were the three most important publications of the period entirely focused on presenting lianhuanhua theory, analyses, criticism, and, later on, readers’ letters and creators’ recollections. As such, all three journals are of great relevance for the study of lianhuanhua: they inform us about the internal discussions between the people hands-on involved in the creation of lianhuanhua over decades; they provide insights into the impact of politics on these processes, both via early campaign-related criticism and later market-driven recommendations; and they showcase feedback and texts sent in by actual readers that were deemed relevant enough to be printed and circulated within the broader lianhuanhua community. Given all this, and also due to their relative rarity in available library collections, we decided to create this searchable overview of their tables of contents to offer a window into this fascinating source.</p>
 
-<p><i>Lianhuanhua yanjiu</i> 连环画研究 (Lianhuanhua Research), initially called <i>Lianhuantuhua yanjiu</i> 连环图画研究 (Lianhuantuhua Research), was published by the Shanghai People's Fine Arts Publishing House Lianhuanhua Editorial Office 上海人民美术出版社连环画编辑室. Its first twelve issues came out between 1955 and 1957; then, restarted and rebranded, another thirteen issues were published between 1978 and 1984. The journal was a subscription-only publication, branded in its initial run with the <i>feimai pin</i> 非卖品 (not for sale) mark and as a <i>neibu kanwu</i> 内部刊物 (internal publication) in its second iteration. This means that the texts found here are potentially more critical and more open-minded than those created for wide public circulation. It also means that the topics covered were somewhat more nuanced, as they could include themes deemed inappropriate or otherwise problematic. Yet it also means that—and this is of particular interest given that the first iteration of <i>Lianhuantuhua yanjiu</i> was coming out concurrently not only to a large-scale top-down campaign to regulate the lianhuanhua industry but also with the Hundred Flowers and Anti-Rightist campaigns—the journal existed during a highly tense and politically loaded time. We present here the full tables of contents for all the post-1978 issues, and four of the first twelve.</p>
+    <p><i>Lianhuanhua yanjiu</i> 连环画研究 (Lianhuanhua Research), initially called <i>Lianhuantuhua yanjiu</i> 连环图画研究 (Lianhuantuhua Research), was published by the Shanghai People's Fine Arts Publishing House Lianhuanhua Editorial Office 上海人民美术出版社连环画编辑室. Its first twelve issues came out between 1955 and 1957; then, restarted and rebranded, another thirteen issues were published between 1978 and 1984. The journal was a subscription-only publication, branded in its initial run with the <i>feimai pin</i> 非卖品 (not for sale) mark and as a <i>neibu kanwu</i> 内部刊物 (internal publication) in its second iteration. This means that the texts found here are potentially more critical and more open-minded than those created for wide public circulation. It also means that the topics covered were somewhat more nuanced, as they could include themes deemed inappropriate or otherwise problematic. Yet it also means that—and this is of particular interest given that the first iteration of <i>Lianhuantuhua yanjiu</i> was coming out concurrently not only to a large-scale top-down campaign to regulate the lianhuanhua industry but also with the Hundred Flowers and Anti-Rightist campaigns—the journal existed during a highly tense and politically loaded time. We present here the full tables of contents for all the post-1978 issues, and four of the first twelve.</p>
 
-<p><i>Lianhuanhua luncong</i> 连环画论丛 (Lianhuanhua Discussion Series) ran for a total of fourteen issues from 1983 to 1986. The journal presented lengthy theoretical discussions that at times followed a semi-academic ambition; however, it was an open-market journal available for purchase by anyone willing to spend 0.42 RMB or, from 1986 onwards, 0.80 RMB. The first ten issues were published by the People’s Fine Arts Publishing House 人民美术出版社 (the same institution that brought out scores of lianhuanhua each year) under the joint editorship of a <i>Lianhuanhua luncong</i> Editorial Committee《连环画论丛》编辑委员会. The editor-in-chief was Jiang Weipu 姜维扑, one of the most influential figures in the lianhuanhua industry, with Cao Zuorei 曹作锐 and later Bai Zi 白字 serving as co-editors. From 1986 (issues eleven to fourteen), the newly founded China Lianhuanhua Publishing House 中国连环画出版社 took over publishing duties, with editorship moving to the China Lianhuanhua Research Committee <i>Lianhuanhua luncong</i> Editorial Committee 中国连环画研究会《连环画论丛》编辑部. (This change was partially related to the launch of a new lianhuanhua pictorial titled <i>Zhongguo Lianhuanhua</i> 中国连环画 (China Lianhuanhua) in 1985, which would continue to appear in competition with <i>Lianhuanhua bao</i> until 1998 when the two journals merged.) We present here the full tables of contents for thirteen of the fourteen issues of <i>Lianhuanhua luncong</i>, missing only the first issue.</p>
+    <p><i>Lianhuanhua luncong</i> 连环画论丛 (Lianhuanhua Discussion Series) ran for a total of fourteen issues from 1983 to 1986. The journal presented lengthy theoretical discussions that at times followed a semi-academic ambition; however, it was an open-market journal available for purchase by anyone willing to spend 0.42 RMB or, from 1986 onwards, 0.80 RMB. The first ten issues were published by the People’s Fine Arts Publishing House 人民美术出版社 (the same institution that brought out scores of lianhuanhua each year) under the joint editorship of a <i>Lianhuanhua luncong</i> Editorial Committee《连环画论丛》编辑委员会. The editor-in-chief was Jiang Weipu 姜维扑, one of the most influential figures in the lianhuanhua industry, with Cao Zuorei 曹作锐 and later Bai Zi 白字 serving as co-editors. From 1986 (issues eleven to fourteen), the newly founded China Lianhuanhua Publishing House 中国连环画出版社 took over publishing duties, with editorship moving to the China Lianhuanhua Research Committee <i>Lianhuanhua luncong</i> Editorial Committee 中国连环画研究会《连环画论丛》编辑部. (This change was partially related to the launch of a new lianhuanhua pictorial titled <i>Zhongguo Lianhuanhua</i> 中国连环画 (China Lianhuanhua) in 1985, which would continue to appear in competition with <i>Lianhuanhua bao</i> until 1998 when the two journals merged.) We present here the full tables of contents for thirteen of the fourteen issues of <i>Lianhuanhua luncong</i>, missing only the first issue.</p>
 
-<p><i>Lianhuanhua luncong</i> ceased publication in December 1986 only to restart in January 1987 as <i>Lianhuanhua yishu</i> 连环画艺术 (Lianhuanhua Art). <i>Lianhuanhua yishu</i> was prepared by the China Lianhuanhua Research Committee <i>Lianhuanhua yishu</i> Editorial Committee 中国连环画研究会《连环画艺术》编辑部, which arose directly from <i>Lianhuanhua luncong's</i> editorial committee and retained the same editor-in-chief, vice editors, and extended team. <i>Lianhuanhua yishu</i> would run until 2012, reaching a total of forty-four issues. We are currently focusing on obtaining and evaluating its initial five years, up to 1991. <i>Lianhuanhua yishu</i> retained the overall style, type of content, and price of its predecessor until mid-1988, when the price doubled to 1.60 RMB. Over time, both <i>Lianhuanhua luncong</i> and especially <i>Lianhuanhua yishu</i> featured an increasing number of texts about Japanese, European, and North American comics, signaling a growing interest in (and somewhat worried awareness of) other forms of graphic narratives. We present here the full tables of contents for eleven of the eighteen issues published up to 1991.</p>
+    <p><i>Lianhuanhua luncong</i> ceased publication in December 1986 only to restart in January 1987 as <i>Lianhuanhua yishu</i> 连环画艺术 (Lianhuanhua Art). <i>Lianhuanhua yishu</i> was prepared by the China Lianhuanhua Research Committee <i>Lianhuanhua yishu</i> Editorial Committee 中国连环画研究会《连环画艺术》编辑部, which arose directly from <i>Lianhuanhua luncong's</i> editorial committee and retained the same editor-in-chief, vice editors, and extended team. <i>Lianhuanhua yishu</i> would run until 2012, reaching a total of forty-four issues. We are currently focusing on obtaining and evaluating its initial five years, up to 1991. <i>Lianhuanhua yishu</i> retained the overall style, type of content, and price of its predecessor until mid-1988, when the price doubled to 1.60 RMB. Over time, both <i>Lianhuanhua luncong</i> and especially <i>Lianhuanhua yishu</i> featured an increasing number of texts about Japanese, European, and North American comics, signaling a growing interest in (and somewhat worried awareness of) other forms of graphic narratives. We present here the full tables of contents for eleven of the eighteen issues published up to 1991.</p>
 
-<p>The ChinaComx team is working on obtaining the missing issues and will add the related content whenever it becomes available to us.</p>
+    <p>The ChinaComx team is working on obtaining the missing issues and will add the related content whenever it becomes available to us.</p>
 
-<h3>About the website</h3>
+    <h3>About the website</h3>
 
-<p>This site was developed as part of the ERC-funded project <a href="https://chinacomx.github.io/" target="_blank">ChinaComx: Comics Culture in the PRC</a>. The digital tables of contents for the three most prominent <em>lianhuanhua</em> theory journals were compiled by the ChinaComx team using materials kindly provided by the <a href="https://www.cats.uni-heidelberg.de/library/" target="_blank">CATS Library</a> and the <a href="https://staatsbibliothek-berlin.de/en/" target="_blank">Berlin State Library</a> via <a href="https://crossasia.org/en/" target="_blank">CrossAsia</a>, alongside our own collection of sources. We extend our gratitude to our research assistants for their help in digitizing the journals. Additionally, the tables of contents for <em>Lianhuantuhua Research</em> 连环图画研究 ８ (1957.04), 9 (1957.05), and 10 (1957.07) were adapted from <a href="https://doi.org/10.14943/2115.98424" target="_blank">an overview article</a> by Takeda Masaya.</p>
-      
-<p>The website was designed by <a href="https://chinacomx.github.io/team/damian/" target="_blank">Damian Mandzunowski</a>, with coding assistance from Gemini 3.1 Pro, and was very much inspired by Konrad Lawson’s <a href="https://froginawell.net/tokyo-gazette/index.html" target="_blank">searchable table of contents of the Tokyo Gazette</a>.</p>
+    <p>This site was developed as part of the ERC-funded project <a href="https://chinacomx.github.io/" target="_blank">ChinaComx: Comics Culture in the PRC</a>. The digital tables of contents for the three most prominent <em>lianhuanhua</em> theory journals were compiled by the ChinaComx team using materials kindly provided by the <a href="https://www.cats.uni-heidelberg.de/library/" target="_blank">CATS Library</a> and the <a href="https://staatsbibliothek-berlin.de/en/" target="_blank">Berlin State Library</a> via <a href="https://crossasia.org/en/" target="_blank">CrossAsia</a>, alongside our own collection of sources. We extend our gratitude to our research assistants for their help in digitizing the journals. Additionally, the tables of contents for <em>Lianhuantuhua Research</em> 连环图画研究 ８ (1957.04), 9 (1957.05), and 10 (1957.07) were adapted from <a href="https://doi.org/10.14943/2115.98424" target="_blank">an overview article</a> by Takeda Masaya.</p>
+        
+    <p>The website was designed by <a href="https://chinacomx.github.io/team/damian/" target="_blank">Damian Mandzunowski</a>, with coding assistance from Gemini 3.1 Pro, and was very much inspired by Konrad Lawson’s <a href="https://froginawell.net/tokyo-gazette/index.html" target="_blank">searchable table of contents of the Tokyo Gazette</a>.</p>
 
-<p style="text-align:center;">*</p>
+    <h3>How to cite</h3>
+    <p>If you use this archive in your research, please cite it as follows:</p>
+    
+    <div class="citation-wrapper">
+      <div class="citation-box" id="citation-text">
+        <em>Lianhuanhua Theory</em>, compiled by Damian Mandzunowski with Lena Henningsen, Jiu Song, Astrid Xiao, and Aijia Zhang. ERC-ChinaComx, 1 April 2026. https://chinacomx.github.io/lhhtheory.
+      </div>
+      <button class="copy-btn" id="copy-citation-btn" aria-label="Copy citation to clipboard">Copy</button>
+    </div>
 
-<p><em>This platform is strictly for academic and educational purposes. If you have any questions, suggestions, or information regarding the few missing journal issues, please <a href="https://chinacomx.github.io/contact/">contact us here</a>.</em></p>
-<p></p>
-<p></p>
-<p></p>
+    <p style="text-align:center;">*</p>
+
+    <p><em>This repository is intended for academic and educational purposes. If you have any questions, suggestions, or information regarding the few missing journal issues, please contact us <a href="https://chinacomx.github.io/contact/">here</a>.</em></p>
+    <p></p>
+    <p></p>
+    <p></p>
   </div>
 
-<div class="custom-chinacomx-footer" style="text-align: center; margin-top: 60px; padding-top: 30px; border-top: 1px solid #eaeaea; padding-bottom: 40px;">
+  <div class="custom-chinacomx-footer" style="text-align: center; margin-top: 60px; padding-top: 30px; border-top: 1px solid #eaeaea; padding-bottom: 40px;">
     <p style="color: #555; font-size: 0.9em; margin-bottom: 15px;">
       <i>Work on this repository was sponsored by the following institutions — learn more <a href="{{ '/about/' | relative_url }}" target="_blank" style="color: #0056b3; text-decoration: none;">here</a></i>:
     </p>
     <div style="display: flex; justify-content: center;">
-      <img src="{{ '/static/images/lhhtheory-footer-logos.jpg' | relative_url }}" alt="Sponsoring Institutions" style="max-width: 100%; height: auto; mix-blend-mode: multiply;">
+      <img src="{{ '/assets/images/lhhtheory-footer-logos.jpg' | relative_url }}" alt="Sponsoring Institutions" style="max-width: 100%; height: auto; mix-blend-mode: multiply;">
     </div>
   </div>
   
@@ -202,3 +276,29 @@ body.dark-mode .floating-controls button:hover {
 </div>
 
 <script src="{{ '/assets/js/custom-search.js' | relative_url }}"></script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const copyBtn = document.getElementById('copy-citation-btn');
+    const citationText = document.getElementById('citation-text');
+
+    if (copyBtn && citationText) {
+        copyBtn.addEventListener('click', function() {
+            const textToCopy = citationText.innerText.trim();
+            
+            navigator.clipboard.writeText(textToCopy).then(() => {
+                const originalText = copyBtn.textContent;
+                copyBtn.textContent = 'Copied!';
+                copyBtn.classList.add('copied');
+                
+                setTimeout(() => {
+                    copyBtn.textContent = originalText;
+                    copyBtn.classList.remove('copied');
+                }, 2000);
+            }).catch(err => {
+                console.error('Failed to copy text: ', err);
+            });
+        });
+    }
+});
+</script>
