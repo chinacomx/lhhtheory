@@ -184,6 +184,15 @@ body.dark-mode .floating-controls button:hover {
 <p></p>
   </div>
 
+<div class="custom-chinacomx-footer" style="text-align: center; margin-top: 60px; padding-top: 30px; border-top: 1px solid #eaeaea; padding-bottom: 40px;">
+    <p style="color: #555; font-size: 0.9em; margin-bottom: 15px;">
+      <i>The creation of this repository was sponsored by the following institutions — learn more <a href="https://chinacomx.github.io/about/" target="_blank" style="color: #0056b3; text-decoration: none;">here</a></i>:
+    </p>
+    <div style="display: flex; justify-content: center;">
+      <img src="https://raw.githubusercontent.com/chinacomx/translations/main/static/images/footer-2025.jpg" alt="Sponsoring Institutions" style="max-width: 100%; height: auto; mix-blend-mode: multiply;">
+    </div>
+  </div>
+  
   <div class="floating-controls">
     <button id="btn-text-decrease" aria-label="Decrease text size">A−</button>
     <button id="btn-text-increase" aria-label="Increase text size">A+</button>
