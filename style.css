@@ -34,6 +34,18 @@ body {
     background-color: #e2e2e2;
 }
 
+/* --- CITATION BOX --- */
+.citation-box {
+    background-color: #f8f9fa;
+    border-left: 4px solid #0056b3;
+    padding: 15px 20px;
+    margin: 20px 0;
+    border-radius: 0 6px 6px 0;
+    font-size: 0.95em;
+    color: #333;
+    line-height: 1.5;
+}
+
 /* Content Container */
 .content {
     display: none; /* Hidden by default */
