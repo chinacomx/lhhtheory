@@ -1,0 +1,11 @@
+# Mac system files
+.DS_Store
+
+# Jekyll build directories and caches
+_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
+
+# Ruby gems (if installed locally)
+vendor/

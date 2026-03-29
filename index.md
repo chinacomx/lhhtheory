@@ -189,6 +189,12 @@ title: "Lianhuanhua Theory"
     to { opacity: 1; transform: translateY(0); }
 }
     
+.footer-logos {
+    max-width: 100%;
+    height: auto;
+    mix-blend-mode: multiply;
+}
+
 /* --- FLOATING ACCESSIBILITY WIDGET --- */
 .floating-controls {
     position: fixed;
@@ -267,7 +273,13 @@ body.dark-mode .floating-controls button:hover {
     color: #66b2ff;
 }
 body.dark-mode .journal-item { color: #ccc; }
-    
+
+body.dark-mode .footer-logos {
+    mix-blend-mode: normal; /* Turns off the shadow-swallowing effect */
+    opacity: 0.85; /* Softens the bright white */
+    border-radius: 4px; /* Optional: rounds the corners of the image slightly */
+}
+
 </style>
 
 <div class="archive-wrapper">
@@ -277,9 +289,9 @@ body.dark-mode .journal-item { color: #ccc; }
     <div class="site-subtitle">
       <span class="journal-list-header">
         <span class="journal-item">Tables of Contents for the theory journals:</span>
-        <span class="journal-item">连环画研究 <em>Lianhuanhua Research</em> <span class="dates">(1955-1957, 1978-1983)</span></span>
-        <span class="journal-item">连环画论丛 <em>Lianhuanhua Discussion Series</em> <span class="dates">(1980-1986)</span></span>
-        <span class="journal-item">连环画艺术 <em>Lianhuanhua Art</em> <span class="dates">(1987-2012)</span></span>
+        <span class="journal-item">连环画研究 <em>Lianhuanhua Research</em><span class="dates">(1955-1957, 1978-1983)</span></span>
+        <span class="journal-item">连环画论丛 <em>Lianhuanhua Discussion Series</em><span class="dates">(1980-1986)</span></span>
+        <span class="journal-item">连环画艺术 <em>Lianhuanhua Art</em><span class="dates">(1987-2012)</span></span>
       </span>
     </div>
     
@@ -343,12 +355,12 @@ body.dark-mode .journal-item { color: #ccc; }
     {% endfor %}
   </div>
 
-<div class="custom-chinacomx-footer" style="text-align: center; margin-top: 60px; padding-top: 30px; border-top: 1px solid #eaeaea; padding-bottom: 40px;">
+  <div class="custom-chinacomx-footer" style="text-align: center; margin-top: 60px; padding-top: 30px; border-top: 1px solid #eaeaea; padding-bottom: 40px;">
     <p style="color: #555; font-size: 0.9em; margin-bottom: 15px;">
-      <i>Work on this repository was sponsored by the following institutions — learn more <a href="{{ '/about/' | relative_url }}" target="_blank" style="color: #0056b3; text-decoration: none;">here</a></i>:
+      <i>Work on this repository was sponsored by the following institutions — learn more <a href="https://chinacomx.github.io/about/" target="_blank" style="color: #0056b3; text-decoration: none;">here</a></i>:
     </p>
     <div style="display: flex; justify-content: center;">
-      <img src="{{ '/static/images/lhhtheory-footer-logos.jpg' | relative_url }}" alt="Sponsoring Institutions" style="max-width: 100%; height: auto; mix-blend-mode: multiply;">
+      <img src="{{ '/assets/images/lhhtheory-footer-logos.jpg' | relative_url }}" alt="Sponsoring Institutions" class="footer-logos">
     </div>
   </div>
 
