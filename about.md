@@ -2,6 +2,7 @@
 layout: single
 classes: wide
 permalink: /about/
+title: "Lianhuanhua Theory"
 ---
 
 <style>
