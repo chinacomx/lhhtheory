@@ -116,7 +116,7 @@ title: "Lianhuanhua Theory"
 .collapsible {
     cursor: pointer;
     padding: 16px 0;
-    border-bottom: 2px solid #eaeaea;
+    border-bottom: 2px dotted #000000;
     margin: 20px 0 0 0;
     display: flex;
     justify-content: space-between; 
@@ -148,13 +148,42 @@ title: "Lianhuanhua Theory"
     animation: fadeIn 0.3s ease-out;
 }
 .content.active { display: block; }
+
+/* --- ISSUE HEADER STYLES --- */
 .issue-header {
-    margin: 30px 0 15px 0;
-    border-bottom: 1px solid #f5f5f5;
-    padding-bottom: 8px;
+    margin: 40px 0 15px 0; /* Added a bit more space above */
+    border-bottom: 1.5px double #eaeaea; /* The new solid red line */
+    padding-bottom: 10px;
 }
-.issue-header .lang-zh { display: block; font-size: 1.1em; color: #444; font-weight: 600; }
-.issue-header .lang-en { display: block; font-size: 0.85em; color: #777; text-transform: uppercase; margin-top: 4px; }
+.issue-header .lang-zh, 
+.issue-header .lang-en {
+    display: flex;
+    justify-content: space-between; /* Pushes title left and date right */
+    align-items: baseline; /* Keeps the bottom of the text aligned */
+}
+.issue-header .lang-zh .issue-name {
+    font-size: 1.1em; 
+    color: rgb(0, 0, 0); 
+    font-weight: 700;
+}
+.issue-header .lang-zh .issue-date {
+    font-size: 0.9em;
+    color: #666; /* Subdued gray so it doesn't fight the red title */
+    font-weight: 400;
+}
+.issue-header .lang-en .issue-name {
+    font-size: 0.85em;
+    color: #777;
+    text-transform: uppercase;
+    margin-top: 4px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+.issue-header .lang-en .issue-date {
+    font-size: 0.85em;
+    color: #888;
+    margin-top: 4px;
+}
 
 .content ul { list-style: none; padding: 0; margin: 0; }
 
@@ -173,7 +202,7 @@ title: "Lianhuanhua Theory"
     flex-grow: 1;
     padding-right: 20px;
 }
-.toc-item-content .lang-zh { display: block; font-size: 1.05em; font-weight: 500; color: #111; }
+.toc-item-content .lang-zh { display: block; font-size: 1.05em; font-weight: 400; color: #111; }
 .toc-item-content .lang-en { display: block; font-size: 0.9em; font-style: italic; color: #666; margin-top: 4px; }
 .author-text { font-weight: 400; color: #888; font-style: normal; }
 
@@ -241,16 +270,20 @@ body.dark-mode .about-content {
 }
 body.dark-mode .site-title-custom,
 body.dark-mode .collapsible .lang-zh,
-body.dark-mode .issue-header .lang-zh,
+
 body.dark-mode .toc-item-content .lang-zh {
     color: #fcfcfc;
 }
 body.dark-mode .custom-header,
-body.dark-mode .issue-header,
 body.dark-mode .collapsible,
 body.dark-mode .toc-item {
     border-color: #333;
 }
+
+body.dark-mode .issue-header { border-bottom: 1.5px double rgb(255, 255, 255); }
+body.dark-mode .issue-header .lang-zh .issue-name { color: #fcfcfc; }
+body.dark-mode .issue-header .lang-zh .issue-date { color: #aaa; }
+
 body.dark-mode .collapsible:hover,
 body.dark-mode .toc-item:hover {
     background-color: #1a1a1a;
@@ -280,6 +313,47 @@ body.dark-mode .footer-logos {
     border-radius: 4px; /* Optional: rounds the corners of the image slightly */
 }
 
+/* --- MOBILE RESPONSIVENESS --- */
+@media (max-width: 600px) {
+    /* 1. Give the text some breathing room off the edges of the screen */
+    .archive-wrapper {
+        padding: 0 20px;
+    }
+
+    /* 2. Shrink the main title slightly so it doesn't wrap awkwardly */
+    .site-title-custom {
+        font-size: 1.8em;
+    }
+
+    /* 3. Stop the Title and Date from crashing into each other */
+    .issue-header .lang-zh, 
+    .issue-header .lang-en {
+        flex-direction: column; /* Stacks them vertically instead of horizontally */
+        align-items: flex-start;
+    }
+    .issue-header .lang-zh .issue-date,
+    .issue-header .lang-en .issue-date {
+        margin-top: 6px; /* Adds a tiny gap between the stacked title and date */
+    }
+
+    /* 4. Fix the Citation Box so the button doesn't squish the text */
+    .citation-box {
+        padding: 18px 20px 60px 20px; /* Removes massive right padding, adds space at the bottom */
+    }
+    .copy-btn {
+        top: auto; /* Removes top anchor */
+        bottom: 15px; /* Anchors it to the bottom right corner instead */
+    }
+    
+    /* 5. Adjust the Accessibility Widget to stay out of the way */
+    .floating-controls {
+        left: 50%;
+        transform: translateX(-50%); /* Perfectly centers the widget at the bottom of the phone */
+        bottom: 20px;
+        width: max-content;
+    }
+}
+
 </style>
 
 <div class="archive-wrapper">
@@ -289,7 +363,8 @@ body.dark-mode .footer-logos {
     <div class="site-subtitle">
       <span class="journal-list-header">
         <span class="journal-item">Tables of Contents for the theory journals:</span>
-        <span class="journal-item">连环画研究 <em>Lianhuanhua Research</em><span class="dates">(1955-1957, 1978-1983)</span></span>
+        <span class="journal-item">連環圖畫研究 <em>Lianhuantuhua Research</em><span class="dates">(1955-1957)</span></span>
+        <span class="journal-item">连环画研究 <em>Lianhuanhua Research</em><span class="dates">(    1978-1983)</span></span>
         <span class="journal-item">连环画论丛 <em>Lianhuanhua Discussion Series</em><span class="dates">(1980-1986)</span></span>
         <span class="journal-item">连环画艺术 <em>Lianhuanhua Art</em><span class="dates">(1987-1991)</span></span>
       </span>
@@ -322,10 +397,16 @@ body.dark-mode .footer-logos {
       
       <div class="content">
         {% for issue in journal.issues %}
-        <div class="issue-header">
-          <span class="lang-zh">{{ issue.name_zh }}</span>
-          <span class="lang-en">{{ issue.name_en }}</span>
-        </div>
+      <div class="issue-header">
+  <span class="lang-zh">
+    <span class="issue-name">{{ issue.name_zh }}</span>
+    {% if issue.date_zh %}<span class="issue-date">{{ issue.date_zh }}</span>{% endif %}
+  </span>
+  <span class="lang-en">
+    <span class="issue-name">{{ issue.name_en }}</span>
+    {% if issue.date_en %}<span class="issue-date">{{ issue.date_en }}</span>{% endif %}
+  </span>
+</div>
         
         <ul>
           {% for article in issue.articles %}
