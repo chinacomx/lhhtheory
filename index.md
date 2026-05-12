@@ -227,6 +227,11 @@ title: "Lianhuanhua Theory"
 .floating-controls button:hover {
     color: #0056b3;
 }
+#btn-back-to-top {
+    border-left: 1px solid #eaeaea;
+    padding-left: 18px;
+    margin-left: 5px;
+}
 
 /* --- DARK MODE OVERRIDES --- */
 body.dark-mode {
@@ -271,6 +276,9 @@ body.dark-mode .floating-controls button {
 }
 body.dark-mode .floating-controls button:hover {
     color: #66b2ff;
+}
+body.dark-mode #btn-back-to-top {
+    border-color: #444;
 }
 body.dark-mode .journal-item { color: #ccc; }
 
@@ -368,6 +376,7 @@ body.dark-mode .footer-logos {
     <button id="btn-text-decrease" aria-label="Decrease text size">A−</button>
     <button id="btn-text-increase" aria-label="Increase text size">A+</button>
     <button id="btn-theme-toggle" aria-label="Toggle dark mode">☽</button>
+    <button id="btn-back-to-top" aria-label="Back to Top" style="display: none; font-size: 1em;">↑ Top</button>
   </div>
 
 </div>
