@@ -152,7 +152,7 @@ title: "Lianhuanhua Theory"
 /* --- ISSUE HEADER STYLES --- */
 .issue-header {
     margin: 40px 0 15px 0; /* Added a bit more space above */
-    border-bottom: 1.5px double #eaeaea; /* The new solid red line */
+    border-bottom: 1.5px double #eaeaea;
     padding-bottom: 10px;
 }
 .issue-header .lang-zh, 
@@ -168,7 +168,7 @@ title: "Lianhuanhua Theory"
 }
 .issue-header .lang-zh .issue-date {
     font-size: 0.9em;
-    color: #666; /* Subdued gray so it doesn't fight the red title */
+    color: #666;
     font-weight: 400;
 }
 .issue-header .lang-en .issue-name {
@@ -256,6 +256,11 @@ title: "Lianhuanhua Theory"
 .floating-controls button:hover {
     color: #0056b3;
 }
+#btn-back-to-top {
+    border-left: 1px solid #eaeaea;
+    padding-left: 18px;
+    margin-left: 5px;
+}
 
 /* --- DARK MODE OVERRIDES --- */
 body.dark-mode {
@@ -271,10 +276,12 @@ body.dark-mode .about-content {
 body.dark-mode .site-title-custom,
 body.dark-mode .collapsible .lang-zh,
 
+body.dark-mode .issue-header .lang-zh,
 body.dark-mode .toc-item-content .lang-zh {
     color: #fcfcfc;
 }
 body.dark-mode .custom-header,
+body.dark-mode .issue-header,
 body.dark-mode .collapsible,
 body.dark-mode .toc-item {
     border-color: #333;
@@ -304,6 +311,9 @@ body.dark-mode .floating-controls button {
 }
 body.dark-mode .floating-controls button:hover {
     color: #66b2ff;
+}
+body.dark-mode #btn-back-to-top {
+    border-color: #444;
 }
 body.dark-mode .journal-item { color: #ccc; }
 
@@ -359,12 +369,14 @@ body.dark-mode .footer-logos {
 <div class="archive-wrapper">
   
   <div class="custom-header">
-    <h1 class="site-title-custom">ChinaComx: Lianhuanhua Theory</h1>
+    <h1 class="site-title-custom">
+      <a href="https://chinacomx.github.io/lhhtheory/" style="color: inherit; text-decoration: none;">ChinaComx: Lianhuanhua Theory</a>
+    </h1>
     <div class="site-subtitle">
       <span class="journal-list-header">
         <span class="journal-item">Tables of Contents for the theory journals:</span>
         <span class="journal-item">連環圖畫研究 <em>Lianhuantuhua Research</em><span class="dates">(1955-1957)</span></span>
-        <span class="journal-item">连环画研究 <em>Lianhuanhua Research</em><span class="dates">(    1978-1983)</span></span>
+        <span class="journal-item">连环画研究 <em>Lianhuanhua Research</em><span class="dates">(1978-1983)</span></span>
         <span class="journal-item">连环画论丛 <em>Lianhuanhua Discussion Series</em><span class="dates">(1980-1986)</span></span>
         <span class="journal-item">连环画艺术 <em>Lianhuanhua Art</em><span class="dates">(1987-1991)</span></span>
       </span>
@@ -449,6 +461,7 @@ body.dark-mode .footer-logos {
     <button id="btn-text-decrease" aria-label="Decrease text size">A−</button>
     <button id="btn-text-increase" aria-label="Increase text size">A+</button>
     <button id="btn-theme-toggle" aria-label="Toggle dark mode">☽</button>
+    <button id="btn-back-to-top" aria-label="Back to Top" style="display: none; font-size: 1em;">↑ Top</button>
   </div>
 
 </div>
