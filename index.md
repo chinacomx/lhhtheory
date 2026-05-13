@@ -116,7 +116,7 @@ title: "Lianhuanhua Theory"
 .collapsible {
     cursor: pointer;
     padding: 16px 0;
-    border-bottom: 2px dotted #000000;
+    border-bottom: 2px dotted #828282bf;
     margin: 20px 0 0 0;
     display: flex;
     justify-content: space-between; 
@@ -130,7 +130,7 @@ title: "Lianhuanhua Theory"
     flex-direction: column;
     gap: 4px; 
 }
-.collapsible .lang-zh { font-size: 1.6em; font-weight: 600; color: #222; line-height: 1.2; }
+.collapsible .lang-zh { font-size: 1.4em; font-weight: 600; color: #222; line-height: 1.2; }
 .collapsible .lang-en { font-size: 0.9em; color: #777; font-weight: 400; letter-spacing: 0.2px; }
 
 .collapsible::after {
@@ -381,7 +381,6 @@ body.dark-mode .footer-logos {
         <span class="journal-item">连环画艺术 <em>Lianhuanhua Art</em><span class="dates">(1987-1991)</span></span>
       </span>
     </div>
-    
     <div class="custom-nav">
       <a href="{{ '/' | relative_url }}">Browse</a>
       <span class="separator">&#124;</span>

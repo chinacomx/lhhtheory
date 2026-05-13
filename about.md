@@ -273,8 +273,9 @@ body.dark-mode .footer-logos {
 <div class="archive-wrapper">
   
   <div class="custom-header">
-    <h1 class="site-title-custom">ChinaComx: Lianhuanhua Theory</h1>
-    
+    <h1 class="site-title-custom">
+      <a href="https://chinacomx.github.io/lhhtheory/" style="color: inherit; text-decoration: none;">ChinaComx: Lianhuanhua Theory</a>
+    </h1>    
     <div class="custom-nav">
       <a href="{{ '/' | relative_url }}">Browse</a>
       <span class="separator">&#124;</span>
