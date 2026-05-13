@@ -3,7 +3,7 @@
 [![Deploy Status](https://github.com/chinacomx/lhhtheory/actions/workflows/pages/build.yml/badge.svg)](https://github.com/chinacomx/lhhtheory/actions)
 [![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 
-A searchable digital archive of tables of contents for the most prominent lianhuanhua theory journals published between 1955 and 1991. A project developped by [Damian Mandzunowski](https://damianmandzunowski.com/) for [ERC-ChinaComx](https://chinacomx.github.io/) at Heidelberg University.
+A searchable digital archive of tables of contents for the most prominent lianhuanhua theory journals published between 1955 and 1991. A project developped by [Damian Mandzunowski](https://damianmandzunowski.com/), with additional imput from the ChinaComx Team, for [ERC-ChinaComx](https://chinacomx.github.io/) at Heidelberg University.
 
 [Browse the repository online](https://chinacomx.github.io/lhhtheory)
 
